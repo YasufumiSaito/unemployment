@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="utf-8">
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <head>
+  	<title>失業率</title>
+  	<meta property="og:image" content="heatmap.png" />
+	<meta name="description" content="昔に比べて日本人はお金を使っているの？３５年間の消費トレンドをデータビジュアライゼーションで表してみた / 35 years of Japanese Consumption Trend Visualized" />
+	<meta property="og:title" content="日本の消費動向 / Japanese Consumption" />
+	<meta property="og:url" content="http://bit.ly/1OYpkAK" />
+	<meta name="twitter:card" content="player">
+	<meta name="twitter:site" content="@yas104">
+	<meta name="twitter:creator" content="@yas104">
+	<meta name="twitter:title" content="Japanese Consumption">
+	<meta name="twitter:description" content="昔に比べて日本人はお金を使っているの？３５年間の消費トレンドをデータビジュアライゼーションで表してみた / 35 years of Japanese Consumption Trend Visualized">
+	<meta name="twitter:image" content="heatmap.png">
+	<meta name="twitter:player" content="https://i.giphy.com/3o7rc6Uacgb1hHubHa.gif">
+	<meta name="twitter:player:width" content="480">
+	<meta name="twitter:player:height" content="322">
+	<meta name="twitter:player:stream" content="https://i.giphy.com/3o7rc6Uacgb1hHubHa.gif">
+	<meta name="twitter:player:stream:content_type" content="video/mp4">
+	<link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+  	<div id="header">
+		<div class="onoffswitch">
+		    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="off" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+		</div>
+	</div>
+  	<div id="intro" class="en">
+
+		<h1 id="head" class="en">Japanese Unemplpyment Rate</h1>
+		<div id="story" class="en">
+			<p>Personal consumption is the engine of the Japanese economy, accounting for 60% of its GDP. The trend will determine tomorrow's economic climate in the country. In other words, whether Japanese economy is going to be healthy depends on how people spend money.</p>
+		</div>
+
+	</div>
+
+	<div id="intro" class="jp">
+
+		<h1 id="head_jp" class="jp">６２年間の失業率</h1>
+		<div id="story" class="jp">
+			<p>日本の失業率を１９５３年から見える化してみた。</p>
+		</div>
+
+	</div>
+
+  	<div id="dataset-picker">
+  		<button id="mainButton" value="data.csv" type="button" class="dataset-button"><p class="jp">総合</p><p class="en">General</p></button>
+  		<button value="men.csv" type="button" class="dataset-button"><p class="jp">男性</p><p class="en">Men</p></button>
+  		<button value="women.csv" type="button" class="dataset-button"><p class="jp">女性</p><p class="en">Women</p></button>
+  	</div>
+
+  	<div id="wrapper">
+		<div id="container">
+		    <div id="tooltip">
+			</div>
+		</div>
+	</div>
+
+    <div id="footer">
+
+	    <div id="colophon">
+	      DATA SOURCE <a href="http://www.stat.go.jp/data/kakei/longtime/index.htm#level" target="_blank">Japanese Statistics Bureau</a><br/>
+	      CREATED BY <a href="http://yasufumisaito.github.io/" target="_blank">&nbsp;Yasufumi Saito</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://twitter.com/yas104" target="_blank">@yas104</a>&nbsp;&nbsp;
+	      <br />
+	      
+	      SHARE THIS ON <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit.ly/1OYpkAK">&nbsp;FACEBOOK</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank "href="https://twitter.com/intent/tweet?text=Check this DataVis%20via%20@yas104%20http://bit.ly/1OYpkAK">TWITTER</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="https://www.linkedin.com/shareArticle?url=http://bit.ly/1OYpkAK">LINKEDIN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="http://b.hatena.ne.jp/add?url=http://bit.ly/1OYpkAK">HATENA</a>
+	    </div>
+
+	</div>
+    <!-- Language Change -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+	$(".jp").css("display", "none");
+	$("#myonoffswitch").click(function(){
+		$(".en").toggle();
+		$(".jp").toggle();	
+	});
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.min.js"></script>
+    <script src="main.js"></script>
+    <!-- Google Analytics -->
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-58632402-5', 'auto');
+	  ga('send', 'pageview');
+	</script>      
+    </body>
+</html>
